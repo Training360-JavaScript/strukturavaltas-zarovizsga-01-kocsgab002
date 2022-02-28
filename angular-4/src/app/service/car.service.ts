@@ -29,4 +29,14 @@ export class CarService {
       `${this.apiUrl}/${car.id}`, car
     )
   }
+
+  delete(car: Cars): Observable<Cars> {
+    return this.http.delete<Cars>(
+      `${this.apiUrl}/${car.id}`
+    );
+  }
+
+  create(car: Cars): Observable<Cars> {
+    return this.http.post<Cars>(`${this.apiUrl}`, car);
+  }
 }
