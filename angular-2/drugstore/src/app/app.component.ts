@@ -15,4 +15,5 @@ export class AppComponent {
 
 
   drug$: Observable<Drug[]> = this.drugService.getAll()
+
 }
