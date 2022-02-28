@@ -1,0 +1,41 @@
+<div class="row">
+  <div *ngIf="car$ | async as car" class="col-12">
+    <form (ngSubmit)="onUpdate(car)" #productForm="ngForm">
+      <div class="form-group">
+        <label for="name">ID</label>
+        <input pattern="^[a-z0-9]{0,5}$" required [(ngModel)]="car.id" type="text" name="id" class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label for="model">model</label>
+        <input pattern="^[A-Z0-9]{2,15}$" required [(ngModel)]="car.model" type="text" name="model" class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label for="make">make</label>
+        <input pattern="^[A-Z]{3,20}$" required [(ngModel)]="car.make" type="text" name="make" class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label for="year">year</label>
+        <input pattern="^[0-9]$" required [(ngModel)]="car.year" type="text" name="year" class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label for="price">price</label>
+        <input pattern="^[0-9]{3,5}$" required [(ngModel)]="car.price" type="text" name="price" class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label for="stock">stock</label>
+        <input required [(ngModel)]="car.stock" type="text" name="stock" class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label for="active">active</label>
+        <input required [(ngModel)]="car.active" type="text" name="active" class="form-control">
+      </div>
+      <button [disabled]="productForm.invalid" type="submit" class="btn btn-primary btn-block">Submit</button>
+    </form>
+  </div>
+</div>
